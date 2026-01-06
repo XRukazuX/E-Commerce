@@ -1,0 +1,10 @@
+.buton {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  width: 50vw;
+}
+.buton button {
+  width: auto;
+  min-width: 20px;
+}
