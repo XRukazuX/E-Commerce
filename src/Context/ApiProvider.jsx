@@ -4,8 +4,14 @@ import axios from "axios";
 function ApiProvider({ children }) {
   const [Api, setApi] = useState(null);
   const [Buy, setBuy] = useState([]);
+  const [Filter, setFilter] = useState("");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
+  const productosFiltrados = Api?.filter((producto) =>
+    producto.title.toLowerCase().includes(Filter.toLowerCase())
+  );
+  const Filtrado = (e) => setFilter(e);
   const Compra = (producto) => {
     //Se Comprueba que el contenido no este ya en la lista
     setBuy((Buy) => {
@@ -93,10 +99,15 @@ function ApiProvider({ children }) {
     }
     dataApi();
   }, []);
+  useEffect(() => {
+    console.log("Filtrado", productosFiltrados);
+  }, [Filter]);
   return (
     <ApiData.Provider
       value={{
+        productosFiltrados,
         Api,
+        Filtrado,
         Buy,
         loading,
         error,

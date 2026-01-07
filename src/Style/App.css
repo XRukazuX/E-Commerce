@@ -1,0 +1,20 @@
+.Title {
+  width: 10vw;
+  min-width: 350px;
+  height: 10vh;
+  text-align: center;
+  font-family: "Pacifico", cursive;
+  font-size: 3rem;
+  margin: 0 auto;
+  background: red;
+  animation: reveal 5s ease forwards;
+}
+
+@keyframes reveal {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}

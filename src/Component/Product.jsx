@@ -7,6 +7,7 @@ function Product() {
     useContext(ApiData);
   //console.log("Data", Api);
   console.log("Buy", Buy);
+  console.log("Api", Api);
   return (
     <>
       {Api && (
@@ -22,22 +23,11 @@ function Product() {
               </Card.Subtitle>
             </Card.Body>
           </Card>
-          <Card style={{ width: "18rem" }}>
-            <Card.Img variant="top" src={Api[1].image} />
-            <Card.Body>
-              <Card.Title>{Api[1].category}</Card.Title>
-              <Card.Subtitle className="mb-2 text-muted">
-                {Api[1].title} <br />
-                {`$ ${Api[1].price} - ⭐ ${Api[1].rating.rate}`}
-              </Card.Subtitle>
-            </Card.Body>
-          </Card>
           <section className="buton">
             <button onClick={() => sumaProducto(Api[0].id)}>+</button>
             <button onClick={() => quitarProducto(Api[0].id)}>-</button>
             <button onClick={() => eliminarProducto(Api[0].id)}>X</button>
             <button onClick={() => Compra(Api[0])}>Agregar carrito</button>
-            <button onClick={() => Compra(Api[1])}>Agregar carrito</button>
           </section>
           <div>Carrito</div>
           <section>
