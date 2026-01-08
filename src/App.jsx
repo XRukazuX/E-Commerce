@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Nav from "./Component/Nav";
 import Product from "./Component/Product";
-import Carousel from "./Component/Carousel";
+import CarouselProduct from "./Component/CarouselProduct";
 import "./Style/App.css";
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
       <BrowserRouter>
         <h1 className="Title">Catapy</h1>
         <Nav />
-        <Carousel />
+        <CarouselProduct />
         <Routes>
           <Route path="/" element={<Product />} />
         </Routes>

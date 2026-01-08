@@ -1,13 +1,15 @@
 .Title {
-  width: 10vw;
-  min-width: 350px;
-  height: 10vh;
+  width: clamp(280px, 80vw, 1080px);
   text-align: center;
   font-family: "Pacifico", cursive;
   font-size: 3rem;
   margin: 0 auto;
-  background: red;
-  animation: reveal 5s ease forwards;
+  background: linear-gradient(80deg, #ffd700, #ff8c00, #8b0000);
+  background-clip: text;
+  background-size: 300% 300%;
+  color: transparent;
+  animation: reveal 5s ease forwards,
+    background-efect 6s 2s ease-in-out forwards;
 }
 
 @keyframes reveal {
@@ -16,5 +18,16 @@
   }
   to {
     clip-path: inset(0 0 0 0);
+  }
+}
+@keyframes background-efect {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
   }
 }
