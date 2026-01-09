@@ -48,3 +48,14 @@
   visibility: visible;
   left: 10px; /* posición final de la lupa */
 }
+/* Desktop y general */
+.offcanvas-custom {
+  height: 50vh !important;
+}
+
+/* Móvil */
+@media (max-width: 768px) {
+  .offcanvas-custom {
+    height: 100vh !important;
+  }
+}

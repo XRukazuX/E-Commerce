@@ -8,9 +8,13 @@ function ApiProvider({ children }) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const productosFiltrados = Api?.filter((producto) =>
-    producto.title.toLowerCase().includes(Filter.toLowerCase())
-  );
+  const productosFiltrados = useMemo(() => {
+    if (!Filter || !Filter.trim()) return [];
+
+    return Api?.filter((producto) =>
+      producto.title.toLowerCase().includes(Filter.toLowerCase())
+    );
+  }, [Api, Filter]);
   const Filtrado = (e) => setFilter(e);
   const Compra = (producto) => {
     //Se Comprueba que el contenido no este ya en la lista
@@ -55,22 +59,9 @@ function ApiProvider({ children }) {
       ).filter((p) => p.cantidad > 0)
     );
   };
-  const sumaProducto = (id) => {
-    setBuy((Buy) =>
-      Buy.map((p) =>
-        p.id === id
-          ? {
-              ...p,
-              cantidad: p.cantidad + 1,
-              subtotal: (p.cantidad + 1) * p.price,
-            }
-          : p
-      )
-    );
-  };
   const vaciarCarrito = () => setBuy([]);
   const total = useMemo(
-    () => Buy.reduce((acc, p) => acc + p.subtotal, 0),
+    () => parseFloat(Buy.reduce((acc, p) => acc + p.subtotal, 0).toFixed(2)),
     [Buy]
   );
   const guardarCarrito = () => {
@@ -100,7 +91,8 @@ function ApiProvider({ children }) {
     dataApi();
   }, []);
   useEffect(() => {
-    console.log("Filtrado", productosFiltrados);
+    /* console.log("Filtrado", productosFiltrados);
+    console.log("Filter", Filter);*/
   }, [Filter]);
   return (
     <ApiData.Provider
@@ -114,7 +106,6 @@ function ApiProvider({ children }) {
         total,
         Compra,
         eliminarProducto,
-        sumaProducto,
         quitarProducto,
         vaciarCarrito,
       }}

@@ -5,8 +5,6 @@ import "../Style/CarouselProduct.css";
 function CarouselProduct() {
   const { Api } = useContext(ApiData);
   const primerosTres = Api?.slice(0, 3);
-
-  console.log(primerosTres);
   return (
     <>
       {primerosTres && (
