@@ -27,18 +27,23 @@
   display: none;
 }
 .comic-border {
-  display: inline-block;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
   padding: 15px 30px;
-  font-size: 24px;
+  font-size: 1rem;
   font-weight: bold;
   color: #ff0044;
   background-color: #fff8e1;
   border: 4px dashed #ff6600;
   border-radius: 15px;
-  position: relative;
-  animation: bounce-border 1s infinite alternate;
   text-align: center;
+
   font-family: "Comic Sans MS", cursive, sans-serif;
+  animation: bounce-border 1s infinite alternate;
+  z-index: 10;
 }
 
 /* Animación divertida del borde */
@@ -54,5 +59,11 @@
   100% {
     transform: rotate(-2deg) scale(1);
     border-color: #ff6600;
+  }
+}
+@media (max-width: 768px) {
+  .comic-border {
+    font-size: 0.8rem;
+    padding: 10px 10px;
   }
 }

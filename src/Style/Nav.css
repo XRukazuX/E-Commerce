@@ -9,7 +9,7 @@
   margin: 0 auto;
   display: flex;
   align-items: center;
-
+  margin-bottom: 2rem;
   background: linear-gradient(white, white) padding-box,
     linear-gradient(80deg, #ffd700, #ff8c00, #8b0000) border-box;
   border: 1px solid transparent;

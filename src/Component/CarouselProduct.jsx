@@ -21,11 +21,11 @@ function CarouselProduct() {
               <Carousel.Caption>
                 <h3>{`$ ${producto.price}`}</h3>
               </Carousel.Caption>
+              <div className="comic-border">¡OFERTAS IMPERDIBLES!</div>
             </Carousel.Item>
           ))}
         </Carousel>
       )}
-      <div className="comic-border">¡OFERTAS IMPERDIBLES!</div>
     </>
   );
 }
