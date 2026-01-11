@@ -12,7 +12,7 @@ function Product() {
     <>
       {Api && (
         <>
-          <h2 className="w-100 text-center"> Productos</h2>
+          <h2 className="w-100 text-center pt-3 title"> Productos</h2>
           <div className="content-product">
             {Api?.map((prod, index) => {
               return (

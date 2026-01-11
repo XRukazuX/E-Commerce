@@ -1,7 +1,5 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Nav from "./Component/Nav";
-import Product from "./Component/Product";
-import CarouselProduct from "./Component/CarouselProduct";
 import Button from "react-bootstrap/Button";
 import { useContext, useState } from "react";
 import Offcanvas from "react-bootstrap/Offcanvas";
@@ -12,16 +10,21 @@ import { ApiData } from "./Context/PortContext";
 import Card from "react-bootstrap/Card";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
-import Spinner from "react-bootstrap/Spinner";
+import { MdFolderDelete } from "react-icons/md";
+import { FaWhatsapp } from "react-icons/fa";
+import Bag from "./Pages/Bag";
+import Home from "./Component/Home";
+
 function App() {
   const {
-    loading,
     Buy,
     total,
     Compra,
     eliminarProducto,
     quitarProducto,
     vaciarCarrito,
+    guardarCarrito,
+    borrarCarritoGuardado,
   } = useContext(ApiData);
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
@@ -29,7 +32,9 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <h1 className="Title">Catapy</h1>
+        <Link className="link" to={"/"}>
+          <h1 className="Title">Catapy</h1>
+        </Link>
         <Button
           onClick={() => handleShow()}
           variant="outline-warning"
@@ -37,7 +42,6 @@ function App() {
         >
           <IoBag />
         </Button>
-        <Nav />
         <Offcanvas
           show={show}
           onHide={handleClose}
@@ -47,7 +51,7 @@ function App() {
           <Offcanvas.Header closeButton>
             <Offcanvas.Title>
               Shopping
-              <Button onClick={() => vaciarCarrito()} variant="danger">
+              <Button onClick={() => vaciarCarrito()} variant="outline-danger">
                 Clear cart
               </Button>
               <OverlayTrigger
@@ -58,9 +62,24 @@ function App() {
                   </Tooltip>
                 }
               >
-                <Button variant="secondary">
-                  {" "}
+                <Button
+                  variant="outline-success"
+                  onClick={() => guardarCarrito()}
+                >
                   <IoIosSave className="oh" />
+                </Button>
+              </OverlayTrigger>
+              <OverlayTrigger
+                placement={"bottom"}
+                overlay={
+                  <Tooltip id={`tooltip-bottom`}>Delete saved list</Tooltip>
+                }
+              >
+                <Button
+                  onClick={() => borrarCarritoGuardado()}
+                  variant="outline-dark"
+                >
+                  <MdFolderDelete className="oh" />
                 </Button>
               </OverlayTrigger>
             </Offcanvas.Title>
@@ -102,9 +121,15 @@ function App() {
                   ))}
                 </div>
                 <div className="w-100 d-flex justify-content-center align-items-center mt-3">
-                  <Button variant="outline-warning" size="lg">
-                    {`Creating Order for a total of ${total} $ USD`}
-                  </Button>
+                  <Link className="link" to={"/Orders"}>
+                    <Button
+                      variant="outline-warning d-flex justify-content-center align-items-center"
+                      size="lg"
+                    >
+                      <FaWhatsapp className="oh " />
+                      {`Creating Order for a total of ${total} $ USD`}
+                    </Button>
+                  </Link>
                 </div>
               </>
             ) : (
@@ -112,18 +137,11 @@ function App() {
             )}
           </Offcanvas.Body>
         </Offcanvas>
-        {loading ? (
-          <div className="loading">
-            <Spinner animation="border" variant="warning" />
-            <section>
-              Loading. Please refresh the page if it takes too long.
-            </section>
-          </div>
-        ) : (
-          <CarouselProduct />
-        )}
+        <Nav />
+
         <Routes>
-          <Route path="/" element={<Product />} />
+          <Route path="/" element={<Home />}></Route>
+          <Route path="/Orders" element={<Bag />} />
         </Routes>
       </BrowserRouter>
     </>

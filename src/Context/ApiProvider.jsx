@@ -65,16 +65,25 @@ function ApiProvider({ children }) {
     [Buy]
   );
   const guardarCarrito = () => {
-    localStorage.setItem("cart_saved", JSON.stringify(Buy));
+    if (Buy) {
+      localStorage.setItem("cart_saved", JSON.stringify(Buy));
+      console.log("Guardado carrito");
+    }
+    if (Buy.length <= 0) {
+      alert("There are no items to store.");
+    }
   };
   const recuperarCarrito = () => {
     const stored = localStorage.getItem("cart_saved");
+    console.log("Datos", stored);
     if (stored) {
       setBuy(JSON.parse(stored));
+      console.log("Datos recuperados", stored);
     }
   };
   const borrarCarritoGuardado = () => {
     localStorage.removeItem("cart_saved");
+    console.log("Carrito, Borrado", localStorage.getItem("cart_saved"));
   };
 
   useEffect(() => {
@@ -89,6 +98,7 @@ function ApiProvider({ children }) {
       }
     }
     dataApi();
+    recuperarCarrito();
   }, []);
   useEffect(() => {
     /* console.log("Filtrado", productosFiltrados);
@@ -108,6 +118,8 @@ function ApiProvider({ children }) {
         eliminarProducto,
         quitarProducto,
         vaciarCarrito,
+        guardarCarrito,
+        borrarCarritoGuardado,
       }}
     >
       {children}

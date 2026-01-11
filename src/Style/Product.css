@@ -4,6 +4,9 @@
   flex-direction: row;
   width: 50vw;
 }
+.title {
+  font-family: "Yuji Boku", serif;
+}
 .buton button {
   width: auto;
   min-width: 20px;
@@ -30,7 +33,7 @@
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(0, 20rem));
-  grid-auto-rows: minmax(0, 23rem);
+  grid-auto-rows: minmax(0, 25rem);
   gap: 2rem;
   justify-content: center;
 }

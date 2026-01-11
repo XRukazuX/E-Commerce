@@ -1,3 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Satisfy&family=Yuji+Boku&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Yuji+Boku&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Grey+Qo&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fleur+De+Leah&family=Grey+Qo&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -8,4 +12,8 @@
   height: auto;
   min-height: 100vh;
   position: relative;
+}
+.link {
+  text-decoration: none;
+  color: initial;
 }
