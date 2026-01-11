@@ -1,0 +1,23 @@
+.Bag-conteiner {
+  min-height: calc(100vh - 200px);
+  background: red;
+}
+.warning {
+  width: clamp(300px, 70vw, 1080px);
+}
+h3 svg {
+  font-size: 3rem;
+}
+.Buscar1 {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  padding-left: 10px; /* inicial */
+  font-size: 1rem;
+  transition: padding-left 0.3s ease; /* animación suave */
+  border-radius: 10px; /* opcional, suaviza las esquinas internas */
+}
+.Nav:focus-within .Buscar1 {
+  padding-left: 35px; /* mueve el texto a la derecha */
+}

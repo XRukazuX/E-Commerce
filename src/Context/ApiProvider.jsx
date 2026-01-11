@@ -75,7 +75,7 @@ function ApiProvider({ children }) {
   };
   const recuperarCarrito = () => {
     const stored = localStorage.getItem("cart_saved");
-    console.log("Datos", stored);
+    console.log("Datos guardados en carrito", stored);
     if (stored) {
       setBuy(JSON.parse(stored));
       console.log("Datos recuperados", stored);

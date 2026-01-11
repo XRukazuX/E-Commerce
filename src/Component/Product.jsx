@@ -4,10 +4,7 @@ import Card from "react-bootstrap/Card";
 import { IoBagAdd } from "react-icons/io5";
 import "../Style/Product.css";
 function Product() {
-  const { Api, Buy, Compra, eliminarProducto, quitarProducto, sumaProducto } =
-    useContext(ApiData);
-  //console.log("Data", Api);
-  console.log("Compra", Buy);
+  const { Api, Compra } = useContext(ApiData);
   return (
     <>
       {Api && (

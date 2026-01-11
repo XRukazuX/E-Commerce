@@ -10,11 +10,16 @@ function Nav() {
   const [Text, setText] = useState("");
   const { Filtrado, productosFiltrados, Compra } = useContext(ApiData);
   const handleKeyPress = (e) => {
-    if (e.key == "Enter") {
-      e.preventDefault();
-      Text.length > 0 ? Filtrado(Text) : Filtrado("");
-      handleShow();
-    }
+    if (e.key !== "Enter") return; // Salir si no es Enter
+
+    e.preventDefault(); // Primero evitar acción por defecto
+
+    // Filtrado según el texto
+    const textoAFiltrar = Text.length > 0 ? Text : "";
+    Filtrado(textoAFiltrar);
+
+    // Mostrar modal / alerta / resultado
+    handleShow();
   };
   const messaje = useMemo(
     () =>
