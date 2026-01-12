@@ -1,6 +1,5 @@
 .Bag-conteiner {
-  min-height: calc(100vh - 200px);
-  background: red;
+  min-height: calc(100vh - 250px);
 }
 .warning {
   width: clamp(300px, 70vw, 1080px);
@@ -20,4 +19,42 @@ h3 svg {
 }
 .Nav:focus-within .Buscar1 {
   padding-left: 35px; /* mueve el texto a la derecha */
+}
+.marg {
+  margin-bottom: 1rem;
+}
+.check {
+  width: 100vw;
+  min-height: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  margin-bottom: 1rem;
+}
+.Pedidos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.ok {
+  font-size: 2rem;
+  visibility: 0;
+  color: greenyellow;
+  transform: scale(1);
+  animation: check1 2s ease-in-out forwards;
+}
+.red {
+  color: red;
+}
+@keyframes check1 {
+  0% {
+    display: block;
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
 }

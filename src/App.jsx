@@ -14,6 +14,7 @@ import { MdFolderDelete } from "react-icons/md";
 import { FaWhatsapp } from "react-icons/fa";
 import Bag from "./Pages/Bag";
 import Home from "./Component/Home";
+import Footer from "./Component/Footer";
 
 function App() {
   const {
@@ -137,12 +138,12 @@ function App() {
             )}
           </Offcanvas.Body>
         </Offcanvas>
-        <Nav />
 
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/Orders" element={<Bag />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </>
   );

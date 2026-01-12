@@ -1,14 +1,13 @@
+import "../Style/Footer.css";
 function Footer() {
   return (
     <>
-      <div className="w-100 d-flex ">
+      <hr />
+      <div className="footer">
         <p>Contacto: info@catapy.com</p>
         <p>
-          Síguenos en:
-          <a href="https://www.instagram.com">Instagram</a> |
-          <a href="https://www.facebook.com">Facebook</a>
+          © {new Date().getFullYear()} Catapy. Todos los derechos reservados.
         </p>
-        <p>© 2026 Catapy. Todos los derechos reservados.</p>
       </div>
     </>
   );

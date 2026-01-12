@@ -4,14 +4,27 @@ import { LuMessageCircleWarning } from "react-icons/lu";
 import { useContext, useState } from "react";
 import { ApiData } from "../Context/PortContext";
 import { FaWhatsapp } from "react-icons/fa";
+import { FaCheckCircle } from "react-icons/fa";
+import { RxCrossCircled } from "react-icons/rx";
 
 function Bag() {
   const { Buy } = useContext(ApiData);
   const [Tel, setTel] = useState("");
+  const [Verf, setVerf] = useState(false);
+  const [Fall, setFall] = useState(false);
+  const startsWith15 = (number) => {
+    return number.startsWith("15");
+  };
   const handleKeyPress = (e) => {
     if (e.key !== "Enter") return;
     e.preventDefault();
-    console.log(Tel);
+    if (Tel.length === 10 && startsWith15(Tel)) {
+      setVerf(true);
+      setFall(false);
+    } else {
+      setFall(true);
+      setVerf(false);
+    }
   };
   const handleInput = (e) => {
     const valor = e.target.value.replace(/\D/g, ""); // eliminar letras
@@ -24,7 +37,7 @@ function Bag() {
           Order submission via WhatsApp
         </h3>
         <div className="Pedidos">
-          <section className="Nav">
+          <section className="Nav marg">
             <FaWhatsapp className="icons" />
 
             <input
@@ -39,6 +52,19 @@ function Bag() {
               placeholder="WhatsApp number"
               onKeyDown={handleKeyPress}
             />
+          </section>
+          <section className="check">
+            {Verf && (
+              <>
+                <FaCheckCircle className="ok" /> <span>Correct</span>
+              </>
+            )}
+            {Fall && (
+              <>
+                <RxCrossCircled className="ok red" />{" "}
+                <span>Error, enter a valid number</span>
+              </>
+            )}
           </section>
         </div>
 
@@ -56,6 +82,11 @@ function Bag() {
             or manage the delivery. <br /> The provided WhatsApp number belongs
             exclusively to the business, so please use it responsibly and
             respectfully. <br /> Misuse may affect service to other customers.
+            <br />
+            <strong>
+              El envío de pedidos está disponible únicamente para números de
+              WhatsApp de Argentina.
+            </strong>
           </p>
         </Alert>
       </div>
