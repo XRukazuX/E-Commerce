@@ -75,17 +75,16 @@ function ApiProvider({ children }) {
   };
   const recuperarCarrito = () => {
     const stored = localStorage.getItem("cart_saved");
-    console.log("Datos guardados en carrito", stored);
+    console.log("Datos guardados en carrito");
     if (stored) {
       setBuy(JSON.parse(stored));
-      console.log("Datos recuperados", stored);
+      console.log("Datos recuperados");
     }
   };
   const borrarCarritoGuardado = () => {
     localStorage.removeItem("cart_saved");
     console.log("Carrito, Borrado", localStorage.getItem("cart_saved"));
   };
-
   useEffect(() => {
     async function dataApi() {
       try {

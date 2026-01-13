@@ -20,8 +20,8 @@ h3 svg {
 .Nav:focus-within .Buscar1 {
   padding-left: 35px; /* mueve el texto a la derecha */
 }
-.marg {
-  margin-bottom: 1rem;
+#marg {
+  margin-bottom: 0.8rem;
 }
 .check {
   width: 100vw;
@@ -32,6 +32,38 @@ h3 svg {
   align-items: center;
 
   margin-bottom: 1rem;
+}
+.Messaje {
+  width: clamp(300px, 70vw, 1080px);
+  height: 20rem;
+  margin: 0 auto;
+  padding: 16px 16px;
+  border-radius: 20px;
+  text-align: start;
+  border: 2px gray solid;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+.Compra {
+  min-height: 20rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.whatsapp {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 90%;
+  color: rgba(11, 235, 93);
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: -1;
 }
 .Pedidos {
   display: flex;
@@ -48,6 +80,16 @@ h3 svg {
 }
 .red {
   color: red;
+}
+.enviar {
+  width: 100vw;
+  max-height: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+  text-align: center;
 }
 @keyframes check1 {
   0% {
