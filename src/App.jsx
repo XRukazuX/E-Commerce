@@ -1,5 +1,4 @@
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import Nav from "./Component/Nav";
 import Button from "react-bootstrap/Button";
 import { useContext, useState } from "react";
 import Offcanvas from "react-bootstrap/Offcanvas";
