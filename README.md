@@ -1,8 +1,5 @@
 # Catapy 🛒
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/tu-badge-aqui/deploy-status)](https://catapy.netlify.app/)  
-[Repositorio GitHub](https://github.com/XRukazuX/E-Commerce)
-
 ---
 
 ## 🔹 Descripción
