@@ -16,6 +16,12 @@ function Bag() {
   const startsWith15 = (number) => {
     return number.startsWith("11");
   };
+  const normalizeMessage = (text) =>
+    text
+      .split("\n")
+      .map((line) => line.trim()) // quita indentaciones
+      .filter((line) => line.length > 0) // quita líneas vacías
+      .join("\n");
   const handleKeyPress = (e) => {
     if (e.key !== "Enter") return;
     e.preventDefault();
@@ -37,10 +43,11 @@ function Bag() {
   console.log(Buy);
   const mensaje = useMemo(() => {
     if (!Buy || Buy.length === 0) {
-      return `Hello 👋\n
-I would like to place an order:\n
-🛒 Products:\n
-- No products selected\n`;
+      return normalizeMessage(`Hello 👋
+      
+I would like to place an order:
+🛒 Products:
+- No products selected`);
     }
 
     let totalprice = total;
@@ -51,16 +58,16 @@ I would like to place an order:\n
       } - Price: $${item.subtotal}`;
     }).join("\n");
 
-    return `Hello 👋\n
-I would like to place an order:\n
-🛒 Products:\n
+    return normalizeMessage(`Hello 👋
+
+I would like to place an order:
+🛒 Products:
 ${productosTexto}
 
 💰 Total: $${totalprice}
 
-Thank you for using our service 🙏`;
+Thank you for using our service 🙏`);
   }, [Buy]);
-  console.log(mensaje);
   return (
     <>
       <div className="Bag-conteiner w-100">
@@ -107,7 +114,20 @@ Thank you for using our service 🙏`;
         </div>
         <section className="enviar">
           {Buy.length > 0 && Verf && (
-            <Button variant="outline-success">Success</Button>
+            <a
+              href={`https://wa.me/549${Tel}?text=${encodeURIComponent(
+                mensaje
+              )}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button variant="outline-success">Success</Button>
+            </a>
+          )}
+          {Buy.length == 0 && Verf && (
+            <Button variant="outline-danger">
+              No products were found for the order
+            </Button>
           )}
         </section>
         <Alert
@@ -126,8 +146,8 @@ Thank you for using our service 🙏`;
             user's own account.
             <br />
             <strong>
-              El envío de pedidos está disponible únicamente para números de
-              WhatsApp de Argentina.
+              Order delivery is only available for WhatsApp numbers in
+              Argentina.
             </strong>
           </p>
         </Alert>

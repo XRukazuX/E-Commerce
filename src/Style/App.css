@@ -53,9 +53,17 @@
   right: 60px;
   z-index: 99;
   background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .offcanvas-custom2 {
   width: 50vw !important;
+}
+.content-boton {
+  max-height: 42px;
+  overflow: hidden;
 }
 .offcanvas-title {
   display: flex;

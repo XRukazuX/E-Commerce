@@ -3,6 +3,7 @@
 }
 .warning {
   width: clamp(300px, 70vw, 1080px);
+  font-family: "Yuji Boku", serif;
 }
 h3 svg {
   font-size: 3rem;
@@ -44,6 +45,7 @@ h3 svg {
   position: relative;
   overflow: hidden;
   z-index: 1;
+  font-family: "JetBrains Mono", monospace;
 }
 .Compra {
   min-height: 20rem;

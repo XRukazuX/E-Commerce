@@ -14,6 +14,8 @@ import { FaWhatsapp } from "react-icons/fa";
 import Bag from "./Pages/Bag";
 import Home from "./Component/Home";
 import Footer from "./Component/Footer";
+import { MdDeleteForever } from "react-icons/md";
+import Error from "./Pages/Error";
 
 function App() {
   const {
@@ -51,7 +53,11 @@ function App() {
           <Offcanvas.Header closeButton>
             <Offcanvas.Title>
               Shopping
-              <Button onClick={() => vaciarCarrito()} variant="outline-danger">
+              <Button
+                onClick={() => vaciarCarrito()}
+                variant="outline-danger"
+                className="content-boton"
+              >
                 Clear cart
               </Button>
               <OverlayTrigger
@@ -100,19 +106,19 @@ function App() {
                               onClick={() => Compra(prod)}
                               variant="outline-primary"
                             >
-                              sumar
+                              +
                             </Button>
                             <Button
                               onClick={() => quitarProducto(prod.id)}
                               variant="outline-primary"
                             >
-                              restar
+                              -
                             </Button>
                             <Button
                               onClick={() => eliminarProducto(prod.id)}
                               variant="outline-primary"
                             >
-                              borrar
+                              <MdDeleteForever size={20} />
                             </Button>
                           </section>
                         </Card.Subtitle>
@@ -139,8 +145,9 @@ function App() {
         </Offcanvas>
 
         <Routes>
-          <Route path="/" element={<Home />}></Route>
+          <Route path="/" element={<Home />} />
           <Route path="/Orders" element={<Bag />} />
+          <Route path="*" element={<Error />} />
         </Routes>
         <Footer />
       </BrowserRouter>
