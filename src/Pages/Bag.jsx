@@ -40,7 +40,6 @@ function Bag() {
     const valor = e.target.value.replace(/\D/g, ""); // eliminar letras
     setTel(valor.slice(0, 10)); // máximo 15 dígitos
   };
-  console.log(Buy);
   const mensaje = useMemo(() => {
     if (!Buy || Buy.length === 0) {
       return normalizeMessage(`Hello 👋
@@ -116,7 +115,7 @@ Thank you for using our service 🙏`);
           {Buy.length > 0 && Verf && (
             <a
               href={`https://wa.me/549${Tel}?text=${encodeURIComponent(
-                mensaje
+                mensaje,
               )}`}
               target="_blank"
               rel="noopener noreferrer"

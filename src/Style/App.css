@@ -1,5 +1,5 @@
 .Title {
-  width: clamp(280px, 80vw, 1080px);
+  width: clamp(280px, 20vw, 1080px);
   text-align: center;
   font-size: 3.5rem;
   margin: 0 auto;
@@ -9,15 +9,32 @@
   padding-bottom: 1rem;
   padding-top: 1rem;
   color: transparent;
-  animation: reveal 6s ease forwards,
+  animation:
+    reveal 6s ease forwards,
     background-efect 6s 2s ease-in-out forwards infinite;
   font-family: "Fleur De Leah", cursive;
 }
-
+.control-with {
+  width: clamp(280px, 20vw, 1080px);
+  display: block;
+  margin: 0 auto;
+}
+.botones {
+  gap: 1rem;
+}
+.box-op {
+  aspect-ratio: 1/1;
+  width: 2.5rem;
+  height: 2.5rem;
+}
 @keyframes reveal {
   from {
     clip-path: inset(0 100% 0 0);
-    text-shadow: 0 0 5px #fff, 0 0 10px #ff0, 0 0 20px #ff0, 0 0 40px #ff0,
+    text-shadow:
+      0 0 5px #fff,
+      0 0 10px #ff0,
+      0 0 20px #ff0,
+      0 0 40px #ff0,
       0 0 80px #ff0;
   }
   to {
@@ -59,11 +76,15 @@
   align-items: center;
 }
 .offcanvas-custom2 {
-  width: 50vw !important;
+  width: clamp(375px, 50vw, 1080px) !important;
 }
 .content-boton {
-  max-height: 42px;
-  overflow: hidden;
+  max-height: 41px;
+}
+@media (width<365px) {
+  .word-secondary {
+    display: none;
+  }
 }
 .offcanvas-title {
   display: flex;
@@ -73,9 +94,9 @@
   gap: 0.4rem;
 }
 /* Móvil */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   .offcanvas-custom2 {
-    width: 100vw !important;
+    width: clamp(375px, 100vw, 1080px) !important;
   }
 }
 .content-product2 {

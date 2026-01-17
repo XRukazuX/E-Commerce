@@ -3,7 +3,6 @@
 }
 .warning {
   width: clamp(300px, 70vw, 1080px);
-  font-family: "Yuji Boku", serif;
 }
 h3 svg {
   font-size: 3rem;
@@ -36,14 +35,13 @@ h3 svg {
 }
 .Messaje {
   width: clamp(300px, 70vw, 1080px);
-  height: 20rem;
+  min-height: 20rem;
   margin: 0 auto;
   padding: 16px 16px;
   border-radius: 20px;
   text-align: start;
   border: 2px gray solid;
   position: relative;
-  overflow: hidden;
   z-index: 1;
   font-family: "JetBrains Mono", monospace;
 }
