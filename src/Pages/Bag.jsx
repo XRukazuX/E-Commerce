@@ -66,7 +66,7 @@ ${productosTexto}
 💰 Total: $${totalprice}
 
 Thank you for using our service 🙏`);
-  }, [Buy]);
+  }, [Buy, total]);
   return (
     <>
       <div className="Bag-conteiner w-100">

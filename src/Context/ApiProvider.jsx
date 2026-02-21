@@ -12,7 +12,7 @@ function ApiProvider({ children }) {
     if (!Filter || !Filter.trim()) return [];
 
     return Api?.filter((producto) =>
-      producto.title.toLowerCase().includes(Filter.toLowerCase())
+      producto.title.toLowerCase().includes(Filter.toLowerCase()),
     );
   }, [Api, Filter]);
   const Filtrado = (e) => setFilter(e);
@@ -29,7 +29,7 @@ function ApiProvider({ children }) {
                 cantidad: p.cantidad + 1,
                 subtotal: (p.cantidad + 1) * p.price,
               }
-            : p
+            : p,
         );
       }
 
@@ -55,14 +55,14 @@ function ApiProvider({ children }) {
               cantidad: p.cantidad - 1,
               subtotal: (p.cantidad - 1) * p.price,
             }
-          : p
-      ).filter((p) => p.cantidad > 0)
+          : p,
+      ).filter((p) => p.cantidad > 0),
     );
   };
   const vaciarCarrito = () => setBuy([]);
   const total = useMemo(
     () => parseFloat(Buy.reduce((acc, p) => acc + p.subtotal, 0).toFixed(2)),
-    [Buy]
+    [Buy],
   );
   const guardarCarrito = () => {
     if (Buy) {
@@ -90,7 +90,7 @@ function ApiProvider({ children }) {
       try {
         const api = await axios.get("https://fakestoreapi.com/products");
         setApi(api.data);
-      } catch (err) {
+      } catch {
         setError("Error cargando productos");
       } finally {
         setLoading(false);

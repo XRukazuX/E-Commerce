@@ -1,5 +1,5 @@
 import Carousel from "react-bootstrap/Carousel";
-import { useContext, useState, useEffect } from "react";
+import { useContext } from "react";
 import { ApiData } from "../Context/PortContext";
 import "../Style/CarouselProduct.css";
 function CarouselProduct() {
