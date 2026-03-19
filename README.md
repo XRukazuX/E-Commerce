@@ -2,6 +2,10 @@
 
 ---
 
+## Demo
+
+![Demo](./src/assets/Demo.gif)
+
 ## 🔹 Descripción
 
 **Catapy** es un **prototipo de tienda online** desarrollado con React y Vite.  
@@ -20,17 +24,14 @@ Permite experimentar con un **carrito de compras completo**, incluyendo:
 ## 🔹 Funcionalidades principales
 
 1. **Catálogo de productos**
-
    - Muestra productos con nombre, precio e imagen.
 
 2. **Carrito de compras**
-
    - Agregar productos con cantidad.
    - Calcular subtotal y total automáticamente.
    - Guardar carrito para continuar más tarde.
 
 3. **WhatsApp para pedidos**
-
    - Permite enviar el pedido completo a un número de WhatsApp de prueba.
    - Solo envía la información de los productos seleccionados, cantidades y total.
 
