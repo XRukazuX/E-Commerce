@@ -138,14 +138,33 @@ Thank you for using our service 🙏`);
             Order via WhatsApp
           </h3>
           <p>
-            This is a demo site created for testing purposes only. <br />
-            No real store exists and no data is stored. <br />
-            The WhatsApp number is used only to test the generation and sending
-            of order messages via WhatsApp <strong>(wa.me)</strong> using the
-            user's own account.
-            <br />
             <strong>
-              Order delivery is only available for WhatsApp numbers in
+              This is a demo site created for testing and demonstration purposes
+              only.
+            </strong>
+          </p>
+
+          <p>
+            No real store exists, and Catapy does not process real orders,
+            payments, or deliveries.
+          </p>
+
+          <p>
+            The WhatsApp number you provide is used only to generate an order
+            message and open WhatsApp (<code>wa.me</code>).
+            <strong>Catapy does not send messages automatically.</strong>
+            You must review and send the message yourself using your own
+            WhatsApp account.
+          </p>
+
+          <p>
+            Catapy does not store the WhatsApp number or order information
+            submitted through this demo.
+          </p>
+
+          <p>
+            <strong>
+              Order messaging is available only for WhatsApp numbers in
               Argentina.
             </strong>
           </p>
