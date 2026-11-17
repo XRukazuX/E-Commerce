@@ -1,66 +1,60 @@
-# Catapy 🛒
+Catapy 🛒
+Demo
 
----
+🔹 Descripción
 
-## Demo
+Catapy es un prototipo de tienda online desarrollado con React y Vite.
 
-![Demo](./src/assets/Demo.gif)
+Permite experimentar con un carrito de compras completo, incluyendo:
 
-## 🔹 Descripción
+Visualización de productos
+Agregar y eliminar productos del carrito
+Guardado del carrito para continuar la compra
+Generación de pedidos para compartir mediante WhatsApp
+El usuario puede introducir el número de WhatsApp de destino que desee
+El mensaje se genera automáticamente, pero el envío debe ser realizado manualmente por el propio usuario desde su cuenta de WhatsApp
+Todo 100% gratuito, ideal para pruebas y demostraciones
 
-**Catapy** es un **prototipo de tienda online** desarrollado con React y Vite.  
-Permite experimentar con un **carrito de compras completo**, incluyendo:
+⚠️ Aviso: Catapy es un prototipo/demo y no está conectado a sistemas de pago, procesamiento de pedidos, envíos ni compras reales. La funcionalidad de WhatsApp únicamente genera un mensaje con los datos del pedido y abre WhatsApp para que el usuario pueda revisarlo y decidir si desea enviarlo.
 
-- Visualización de productos
-- Agregar y eliminar productos del carrito
-- Guardado del carrito para continuar la compra
-- Sistema de envío de pedidos a **WhatsApp**, donde el usuario puede poner su número de prueba y enviar **solo los pedidos**
-- Todo **100% gratuito**, ideal para pruebas y demostraciones
+🔹 Funcionalidades principales
 
-> ⚠️ Este proyecto es un prototipo, no está conectado a pagos reales ni a envíos.
+Catálogo de productos
 
----
+Muestra productos con nombre, precio e imagen.
 
-## 🔹 Funcionalidades principales
+Carrito de compras
 
-1. **Catálogo de productos**
-   - Muestra productos con nombre, precio e imagen.
+Agregar productos con cantidad.
+Calcular subtotal y total automáticamente.
+Guardar el carrito para continuar más tarde.
 
-2. **Carrito de compras**
-   - Agregar productos con cantidad.
-   - Calcular subtotal y total automáticamente.
-   - Guardar carrito para continuar más tarde.
+Pedidos mediante WhatsApp
 
-3. **WhatsApp para pedidos**
-   - Permite enviar el pedido completo a un número de WhatsApp de prueba.
-   - Solo envía la información de los productos seleccionados, cantidades y total.
+Permite introducir un número de WhatsApp de destino.
+Genera un mensaje con los productos seleccionados, sus cantidades y el total.
+Abre WhatsApp con el mensaje preparado.
+Catapy no envía mensajes automáticamente: el usuario debe revisar y enviar el mensaje desde su propia cuenta de WhatsApp.
 
-4. **Interfaz responsiva**
-   - Se adapta a escritorio y móvil usando React y CSS.
+Interfaz responsiva
 
----
-
-## 🔹 Demo en línea
+Se adapta a escritorio y móvil usando React y CSS.
+🔹 Demo en línea
 
 Puedes probar el prototipo directamente desde Netlify:
 
-[👉 Ver Catapy en Netlify](https://catapy.netlify.app/)
+👉 Ver Catapy en Netlify
 
----
-
-## 🔹 Repositorio
+🔹 Repositorio
 
 El código completo del proyecto está disponible en GitHub:
 
-[👉 Catapy en GitHub](https://github.com/XRukazuX/E-Commerce)
+👉 Catapy en GitHub
 
----
-
-## 🔹 Tecnologías utilizadas
-
-- **React**
-- **Vite**
-- **React Icons** para iconos
-- **React Router** para navegación
-- **LocalStorage** para guardar el carrito
-- **WhatsApp API** para enviar pedidos
+🔹 Tecnologías utilizadas
+React
+Vite
+React Icons para iconos
+React Router para navegación
+LocalStorage para guardar el carrito
+Enlaces de WhatsApp para generar mensajes de pedidos
